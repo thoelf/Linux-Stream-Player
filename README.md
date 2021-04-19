@@ -1,24 +1,23 @@
-# Linux Stream Player
+# Linux Stream Player (LSP)
 ## Introduction
 LSP is a set of scripts, third party programs and configurations that allows you to play music on a headless Linux computer, from now on called the "server". You can control the music from a mobile app or a from web browser on a Linux computer, from now on called the "client".
 
-LSP is tested to work with Ubuntu server 20.04 as OS the server and Ubuntu Desktop 20.10 as OS on the client.
-
 LSP is designed to meet my personal goals for how I want to play music at home. The intention is not to make a solution for all sorts of use cases or to support other platforms and aplications that the ones I use. Nevertheless, with some tweaking you should be able to adopt it to your needs.
 
-## DSP with CamillaDSP
-LSP uses CamillaDSP for room EQ. For more information about CamillaDSP, refer to https://github.com/HEnquist/pycamilladsp and https://www.diyaudio.com/forums/pc-based/349818-camilladsp-cross-platform-iir-fir-engine-crossovers-correction-etc.html.
+LSP is tested to work with Ubuntu Server 20.04 on the server and Ubuntu Desktop 20.10 on the client.
 
-I have got my filter parameters from measurements using a USB microphone and REW, refer to https://www.roomeqwizard.com/.
+## DSP with CamillaDSP
+LSP uses CamillaDSP for room EQ. For more information about CamillaDSP, refer to [CamillaDSP on GitHub](https://github.com/HEnquist/camilladsp)
+and [CamillaDSP on diyAudio](https://github.com/HEnquist/pycamilladsp).
+
+I have got my filter parameters from measurements using a USB microphone and REW, refer to [Room EQ Wizard](https://www.roomeqwizard.com/).
 
 CamillaDSP is in the audio chain in both use cases described below.
 
 ## Playing music locally on the server
-LSP uses Logitech Media Server (LMS) with SqueezeLite as the player. Both programs are installed on the server and plays local and streamed music. My source of streamed music is Deezer, but other streaming services are supported and available as plugins to LMS.
+LSP uses LMS (Logitech Media Server) with SqueezeLite as the player. Both programs are installed on the server and plays local and streamed music. My source of streamed music is Deezer, but other streaming services are supported and available as plugins to LMS.
 
-To make a base configuration of Logitech Media Server and SqueezeLite, refer to TBD.
-
-SqueezeLite is controlled from a mobile app, for example https://play.google.com/store/apps/details?id=com.angrygoat.android.squeezectrl and from a web browser on the LSP client.
+SqueezeLite is controlled from a mobile app, for example https://play.google.com/store/apps/details?id=com.angrygoat.android.squeezectrl and from a web browser on the client.
 
 The audio stream to the DAC has the same sample frequency as the source, i.e. no resampling.
 
@@ -45,3 +44,16 @@ LSP lets you:
 In both cases, the audio stream is processed by CamillaDSP for room EQ.
 
 The audio stream is not resampled when played by Squeezelite.
+
+# The files and their function in LSP
+## client
+### /home/<user>/bin/
+
+## server
+### /usr/local/bin/
+camilladsp: The CamillaDSP binary file. Get it from the link above.
+camilladsp_version.txt: The version of CamillaDSP in case I forget.
+lasp-dac_added.sh: 
+
+
+
