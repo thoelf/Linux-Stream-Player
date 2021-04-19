@@ -78,3 +78,6 @@ squeezelite.service:
 
 ### /etc/udev/rules.d/
 90-dac.rules:
+
+# A note about software licenses
+The software in LSP and all software used by LSP, is free and open source software. The REW software, which is mentioden but not strictly needed, is properitary software that is free of cost, i.e. freeware.
