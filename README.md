@@ -17,8 +17,6 @@ LSP uses LMS (Logitech Media Server) with SqueezeLite as the player. Both progra
 
 SqueezeLite can be controlled from a mobile app, for example [LMS on F-Droid](https://f-droid.org/en/packages/com.craigd.lmsmaterial.app/) and from a web browser on the client.
 
-The LMS app requires you to use MaterialSkin as a plugin to LMS (the server). Material Skin [Material Skin](https://github.com/CDrummond/lms-material) is strongly recommended and is easily installed from the browser when you have installed LMS (the server).
-
 The audio stream to the DAC has the same sample frequency as the source, i.e. no resampling.
 
 ## Playing music on the client and streaming it to the server
@@ -28,38 +26,55 @@ If you prefer Spotify, you might be better off with the Spotify application for 
 
 You can of cource use only LMS and SqueezeLite for your audio streaming, but then you cannot have the same user interface that for example Deezer provides via its web page. I have come to use LMS the most, but it can be good to have the ability to stream direct from the client.
 
-In LSP, Firefox streams to MPD on the server. Then MPD plays the music on the server.
-
-The music that is streamed from the client to the server is silent on the client. I can still play audio on the client from other audio players outside LSP.
-
-I use Firefox for this particular purpose, just to make my preferred browser (Brave) free for all other browsing activities.
-
 The audio stream is resampled to 44.1 kHz on the client.
 
-## Using LSP
-When all is set up and working, I start Firefox from Cairo dock. I use Cairo dock to start Firefox from a script, that makes Firefox play audio to the nullsink.
+## Controlling LSP
+When all is set up and working, Firefox is started from Cairo dock.
 
 I select play method by clicking on an icon in Cairo dock.
 
 ## Summing up the introduction
-LSP lets you:
-* Use your mobile phone or Linux computer to let LMS/SqueezeLite play music on your Linux server. The audio stream is not resampled.
-* Stream audio from a web browser on your Linux computer to MPD on your Linux Server. The audio stream is resampled to 44.1 kHz.
-
-In both play methods, the audio stream is processed by CamillaDSP for room EQ.
+* You can use your mobile phone or Linux computer to let LMS/SqueezeLite play music on your Linux server. The audio stream is not resampled.
+* You can stream music from a web browser on your Linux computer to MPD on your Linux Server. The audio stream is resampled to 44.1 kHz.
+* The audio stream is processed by CamillaDSP for room EQ.
 
 # More details...
+## Playing music locally on the server
 
+The LMS app requires you to use MaterialSkin as a plugin to LMS (the server). Material Skin [Material Skin](https://github.com/CDrummond/lms-material) is strongly recommended and is easily installed from the browser when you have installed LMS (the server).
+
+## Playing music on the client and streaming it to the server
+When streaming from a browser, the environment for the browser is set up so that the web browser plays to the nullsink. An audio stream is set up from the nullsink using cvlc. The stream goes to MPD on the server, that streams the audio via CamillaDSP to the DAC. 
+
+The audio sent to the nullsink is inaudible on the client. Is is possible to play audio on the client from other audio players while streaming to the nullsink.
+I use Firefox as the music playing browser, just to make my preferred browser (Brave) free for all other browsing activities.
+
+## Controlling LSP
+The browser is started from the Cairo dock. This is becasue the environment for the browser must be set up, in order for it to stream to the nullsink.
+
+Another button on the dock is the stream selection button, which runs a script that toggles between the two streaming methods.
 
 # The files and their function in LSP
 ## client
 ### /home/\<user\>/bin/
+audio_ff.sh:
+conky_streaming.sh:
+lasp-select_player.sh:
 
 ## server
 ### /usr/local/bin/
-camilladsp: The CamillaDSP binary file. Get it from the link above.
-camilladsp_version.txt: The version of CamillaDSP in case I forget.
-lasp-dac_added.sh: 
+* camilladsp: The CamillaDSP binary file. Get it from the link above.
+* camilladsp_version.txt: The version of CamillaDSP. *** .gitignore
+* lasp-dac_added.sh: 
+* lasp-samplerate.py: Detect the sample rate from SqueezeLite and select the applicable config file for CamillaDSP.
+* squeezelite: The SqueezeLite binary file.
+* squeezelite_version.txt: The version of SqueezeLite. *** .gitignore
 
+### /etc/systemd/system/
+lasp-control.service:
+lasp-restore_state.service:
+lasp-samplerate.service:
+squeezelite.service: 
 
-
+### /etc/udev/rules.d/
+90-dac.rules:
