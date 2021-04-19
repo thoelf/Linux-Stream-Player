@@ -8,7 +8,7 @@ LSP is tested to work with Ubuntu Server 20.04 on the server and Ubuntu Desktop 
 
 ## Room EQ with CamillaDSP
 LSP uses CamillaDSP for room EQ. For more information about CamillaDSP, refer to [CamillaDSP on GitHub](https://github.com/HEnquist/camilladsp)
-and [CamillaDSP on diyAudio](https://github.com/HEnquist/pycamilladsp).
+and [CamillaDSP on diyAudio](https://www.diyaudio.com/forums/pc-based/349818-camilladsp-cross-platform-iir-fir-engine-crossovers-correction-etc.html).
 
 I have got my filter parameters from measurements using a USB microphone and REW, refer to [Room EQ Wizard](https://www.roomeqwizard.com/).
 
