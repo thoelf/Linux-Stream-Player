@@ -57,9 +57,9 @@ Another button on the dock is the stream selection button, which runs a script t
 # The files and their function in LSP
 ## client
 ### /home/\<user\>/bin/
-audio_ff.sh:
-conky_streaming.sh:
-lasp-select_player.sh:
+* audio_ff.sh:
+* conky_streaming.sh:
+* lasp-select_player.sh:
 
 ## server
 ### /usr/local/bin/
@@ -71,13 +71,15 @@ lasp-select_player.sh:
 * squeezelite_version.txt: The version of SqueezeLite. *** .gitignore
 
 ### /etc/systemd/system/
-lasp-control.service:
-lasp-restore_state.service:
-lasp-samplerate.service:
-squeezelite.service: 
+* lasp-control.service:
+* lasp-restore_state.service:
+* lasp-samplerate.service:
+* squeezelite.service: 
 
 ### /etc/udev/rules.d/
-90-dac.rules:
+* 90-dac.rules:
+
+### Docker
 
 # A note about software licenses
 The software in LSP and all software used by LSP, is free and open source software. The REW software, which is mentioden but not strictly needed, is properitary software that is free of cost, i.e. freeware.
