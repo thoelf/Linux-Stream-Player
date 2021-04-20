@@ -11,7 +11,7 @@ LSP uses LMS (Logitech Media Server) with SqueezeLite as the player. Both progra
 
 Personally, I prefer to run LMS in a Docker container. LMS can also be installed as a .deb file.
 
-SqueezeLite can be controlled from a web browser on the client or from a mobile app, for example the LMS app. The LMS app requires you to use MaterialSkin as a plugin to LMS (the server). Material Skin is strongly recommended, because its beautiful, and is easily installed from the browser when you have installed LMS (the server).
+SqueezeLite can be controlled from a web browser on the client or from a mobile app, for example the LMS app. The LMS app requires you to use Material Skin as a plugin to LMS (the server). Material Skin is strongly recommended, because its beautiful, and is easily installed from the browser when you have installed LMS (the server).
 
 The audio stream is piped from SqueezeLite via CamillaDSP (for room EQ) to the DAC with the same sample frequency as the source, i.e. no resampling in the chain.
 
