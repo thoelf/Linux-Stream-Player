@@ -1,12 +1,11 @@
-# Linux Stream Player (LSP)
-## Introduction
+# Introduction to the Linux Stream Player (LSP)
 LSP is a set of scripts, third party programs and configurations that allows you to play music on a headless Linux computer, from now on called the "server". You can control the music from a mobile app or a from web browser on a Linux computer, from now on called the "client".
 
 LSP is designed to meet my personal goals for how I want to play music at home. The intention is not to make a solution for all sorts of use cases or to support other platforms and applications that the ones I use. Nevertheless, with some tweaking you should be able to adopt it to your needs.
 
 LSP is tested to work with Ubuntu Server 20.04 on the server and Ubuntu Desktop 20.10 on the client.
 
-## Playing music locally on the server
+# Playing music locally on the server
 LSP uses LMS (Logitech Media Server) with SqueezeLite as the player. Both programs are installed on the server and plays local and streamed music. My source of streamed music is Deezer, but other streaming services are supported and available as plugins to LMS.
 
 Personally, I prefer to run LMS in a Docker container. LMS can also be installed as a .deb file.
@@ -15,7 +14,7 @@ SqueezeLite can be controlled from a web browser on the client or from a mobile 
 
 The audio stream is piped from SqueezeLite via CamillaDSP (for room EQ) to the DAC, with the same sample frequency as the source, i.e. without resampling.
 
-## Playing music on the client and streaming it to the server
+# Playing music on the client and streaming it to the server
 LSP supports streaming music from the client to the server. I use Firefox to stream music from the Deezer webpage.
 
 If you prefer Spotify, you might be better off with the Spotify application for Linux on the client and spotifyd on the server. This works very well. If you follow that path, LSP might not be of great use for you.
@@ -28,7 +27,7 @@ I use Firefox as the music playing browser, just to make my preferred browser (B
 
 The audio stream is resampled to 44.1 kHz on the client. You should be able to change the sample rate to another static value if you like. If you have any suggestions to stream with a variable sample frequency (i.e. matching the source), please let me know. In my case with Deezer, the source is always 44.1 kHz, so its not a concern for me.
 
-## Controlling LSP
+# Controlling LSP
 When all is set up and working, the browser is started from Cairo dock. Clicking on the icon in the dock runs a script that sets the nullsink for the browser and then starts the browser.
 
 Another button on the dock is the stream selection button, which runs a script that toggles between the two streaming methods.
