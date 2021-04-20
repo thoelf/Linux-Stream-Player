@@ -20,7 +20,7 @@ LSP supports streaming music from the client to the server. I use Firefox to str
 
 If you prefer Spotify, you might be better off with the Spotify application for Linux on the client and spotifyd on the server. This works very well. If you follow that path, LSP might not be of great use for you.
 
-You can of cource use only LMS and SqueezeLite for your audio streaming, but then you cannot have the same user interface that for example Deezer provides via its web page. I have come to use LMS the most, but it can be good to have the ability to stream direct from the client.
+You can of cource use only LMS and SqueezeLite for your audio streaming, but then you cannot use the user interface that for example Deezer provides via its web page. I have come to use LMS the most, but it can be good to have the ability to stream direct from the client.
 
 When streaming from a browser, the environment for the browser is set up so that the browser plays to the nullsink. The audio sent to the nullsink is inaudible on the client. An audio stream is set up from the nullsink using cvlc. The stream goes to MPD on the server, that streams the audio via CamillaDSP (for room EQ) to the DAC.
 
