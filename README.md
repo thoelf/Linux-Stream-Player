@@ -26,15 +26,15 @@ When streaming from a browser, the environment for the browser is set up so that
 
 I use Firefox as the music playing browser, just to make my preferred browser (Brave) free for all other browsing activities. While streaming to the nullsink on the client, is is possible to play audio on the client from other audio players.
 
-The audio stream is resampled to 44.1 kHz on the client. You should be able to change the sample rate to another static value if you like. If you have any suggestions to stream with a variable sample frequency (i.e. matching the source), please let me know. In my case with Deezer, the source is always 44.1 kHz.
+The audio stream is resampled to 44.1 kHz on the client. You should be able to change the sample rate to another static value if you like. If you have any suggestions to stream with a variable sample frequency (i.e. matching the source), please let me know. In my case with Deezer, the source is always 44.1 kHz, so its not a concern for me.
 
 ## Controlling LSP
-When all is set up and working, the browser is started from Cairo dock. Clicking on the icon in the dock runs a script tha tsets the nullsink for the browser and then starts the browser.
+When all is set up and working, the browser is started from Cairo dock. Clicking on the icon in the dock runs a script that sets the nullsink for the browser and then starts the browser.
 
 Another button on the dock is the stream selection button, which runs a script that toggles between the two streaming methods.
 
 # Room EQ with CamillaDSP
-LSP uses CamillaDSP for room EQ. I have got my filter parameters from measurements using a USB microphone and REW.
+LSP uses CamillaDSP for room EQ. I have got my filter parameters from measurements using a USB microphone and REW. When starting out, you can start with no filters and then add filters in the future.
 
 # Links
 * [LMS on Docker hub](https://hub.docker.com/r/lmscommunity/logitechmediaserver)
