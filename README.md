@@ -41,7 +41,6 @@ LSP uses CamillaDSP for room EQ. I have got my filter parameters from measuremen
 * [The LMS app on F-Droid](https://f-droid.org/en/packages/com.craigd.lmsmaterial.app/)
 * [Material Skin for LMS](https://github.com/CDrummond/lms-material)
 * [SqueezeLite on GitHub](https://github.com/ralph-irving/squeezelite)
-* [SqueezeLite (executable) on Sourceforge](https://sourceforge.net/projects/lmsclients/files/squeezelite/linux/)
 * [CamillaDSP on GitHub](https://github.com/HEnquist/camilladsp)
 * [CamillaDSP on diyAudio](https://www.diyaudio.com/forums/pc-based/349818-camilladsp-cross-platform-iir-fir-engine-crossovers-correction-etc.html)
 * [Room EQ Wizard, REW](https://www.roomeqwizard.com/)
