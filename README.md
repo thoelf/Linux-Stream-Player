@@ -51,3 +51,4 @@ LSP uses CamillaDSP for room EQ. I have got my filter parameters from measuremen
 The software in LSP and all software used by LSP, is free and open source software. The REW software, which is not strictly needed, is closed source software that is free of cost, i.e. freeware.
 
 # To be continued ...
+I will add files and an installation procedure in the near future.
