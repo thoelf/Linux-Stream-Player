@@ -24,9 +24,10 @@ How to get the device is TBD.
 
 # SqueezeLite
 ## Getting the binary file - Alt 1: Compile from source
-Download the zipped files from with this command:<br/>```wget https://github.com/ralph-irving/squeezelite/archive/refs/heads/master.zip```
+Download the zipped files with this command:<br/>
+```wget https://github.com/ralph-irving/squeezelite/archive/refs/heads/master.zip```
 
-Unzip and cd into the unzipped directory.
+Unzip the downloaded file and cd into the unzipped directory.
 
 Compile SquuezeLite with this command:<br/>```make```
 
@@ -35,18 +36,20 @@ You might not have the necessary packages to run make. Install any missing packa
 ## Getting the binary file - Alt 2: Download an already compiled file
 Download the already compiled program with his command:<br/>```wget https://sourceforge.net/projects/lmsclients/files/squeezelite/linux/<the release of your choice>```
 
-Unzip and cd into the unzipped directory.
+Unzip the downloaded file and cd into the unzipped directory.
 
 ## Install the binary file
-Install the binary file:<br/>```sudo install -m 750 -g audio /usr/local/bin```
+Install the binary file:<br/>
+```sudo install -m 750 -g audio /usr/local/bin```
 
 # CamillaDSP
 ## Compiling from source - alt 1
-Download the source code file with this command:<br/>```wget https://github.com/HEnquist/camilladsp/releases/<the release of your choice>```
+Download the source code file with this command:<br/>
+```wget https://github.com/HEnquist/camilladsp/releases/<the release of your choice>```
 
-Read the instructions on https://github.com/HEnquist/camilladsp to know what is required to compile from source.
+Read the instructions on [CamillaDSP on GitHub](https://github.com/HEnquist/camilladsp) to know what is required to compile from source.
 
-Unzip the file and cd into the unzipped directory.
+Unzip the downloaded file and cd into the unzipped directory.
 
 Compile CamillaDSP with for example this command:<br/>
 ```RUSTFLAGS='-C target-cpu=native' cargo build --release --no-default-features --features alsa-backend --features websocket```
@@ -57,7 +60,7 @@ cd into .../camilladsp-\<version number\>/target/release
 Download the compiled program file with this command:<br/>
 ```wget https://github.com/HEnquist/camilladsp/releases/<the release of your choice>```
 
-Unzip the file and cd into the unzipped directory.
+Unzip the downloaded file and cd into the unzipped directory.
 
 ## Install the binary file
 Install the binary file with this command:<br/>
@@ -67,7 +70,7 @@ Install the binary file with this command:<br/>
 Download the files from this page with this command:<br/>
 ```wget https://github.com/thoelf/Linux-Stream-Player/archive/refs/heads/main.zip```
 
-Unzip the file and cd into the unzipped directory.
+Unzip the downloaded file and cd into the unzipped directory.
 
 Install the control scripts with this command:<br/>
 ```install -m 750 -g audio lasp-control.sh lasp-dac_added.sh lasp-samplerate.py /usr/local/bin```
