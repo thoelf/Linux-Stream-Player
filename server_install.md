@@ -1,9 +1,7 @@
 # LMS
-If you want to run LMS in a Docker container, you can use this image:
-https://hub.docker.com/r/lmscommunity/logitechmediaserver
+If you want to run LMS in a Docker container, you can use this image:  https://hub.docker.com/r/lmscommunity/logitechmediaserver
 
-Alternatively, download LMS from the link below and then install it:
-https://www.mysqueezebox.com/
+Alternatively, download LMS from the link below and then install it:  https://www.mysqueezebox.com/
 
 When you have LMS up and running, browse to http://<IP address>:9000. Install the plugins that you want to use and do any configuration you find suitable. I recommend the plugin for Material Skin.
 
@@ -26,9 +24,7 @@ How to get the device is TBD.
 
 # SqueezeLite
 ## Getting the binary file - Alt 1: Compile from source
-Download the zipped files from with this command:
-
-```wget https://github.com/ralph-irving/squeezelite/archive/refs/heads/master.zip```
+Download the zipped files from with this command:  ```wget https://github.com/ralph-irving/squeezelite/archive/refs/heads/master.zip```
 
 Unzip and cd into the unzipped directory.
 
