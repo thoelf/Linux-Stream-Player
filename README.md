@@ -23,7 +23,7 @@ You can of cource use only LMS and SqueezeLite for your audio streaming, but the
 
 When streaming from a browser, the environment for the browser is set up so that the browser plays to the nullsink. The audio sent to the nullsink is inaudible on the client. An audio stream is set up from the nullsink using cvlc. The stream goes to MPD on the server, that streams the audio via CamillaDSP (for room EQ) to the DAC.
 
-I use Firefox as the music playing browser, just to make my preferred browser (Brave) free for all other browsing activities. While streaming to the nullsink on the client, is is possible to play audio on the client from other audio players.
+I use Firefox as the music playing browser, just to make my preferred browser (Brave) free for all other browsing activities. While streaming to the nullsink on the client, it is possible to play audio on the client from other audio players.
 
 The audio stream is resampled to 44.1 kHz on the client. You should be able to change the sample rate to another static value if you like. If you have any suggestions to stream with a variable sample frequency (i.e. matching the source), please let me know. In my case with Deezer, the source is always 44.1 kHz, so its not a concern for me.
 
@@ -48,5 +48,6 @@ LSP uses CamillaDSP for room EQ. I have got my filter parameters from measuremen
 # A note about the software used or referenced
 The software in LSP and all software used by LSP, is free and open source software. The REW software, which is not strictly needed, is closed source software that is free of cost, i.e. freeware.
 
-# To be continued ...
-Files and an installation procedure will be added in the near future.
+# Installing the software - Work in progress... 
+Follow the procedure in server_install.md to install software on the server.
+Follow the procedure in client_install.md to install software on the client.
