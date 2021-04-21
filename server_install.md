@@ -70,6 +70,13 @@ Unzip the downloaded file and cd into the unzipped directory.
 Install the binary file:<br/>
 ```sudo install -m 750 -g audio camilladsp /usr/local/bin```
 
+## Install the service file
+Install the service file:
+```sudo install -m 644 camilladsp.service /etc/systemd/system```
+
+Disable the service, because it should not autostart:<br/>
+```sudo systemctl disable camilladsp.service```
+
 ## Install the configuration files
 TBD
 
