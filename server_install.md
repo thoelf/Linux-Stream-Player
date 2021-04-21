@@ -77,7 +77,7 @@ TBD
 Back up your existing /etc/asound.conf:<br/>
 ```sudo cp /etc/asound.conf /etc/asound.conf_orig```
 
-Install the asound.conf from LSP:<br/>
+Install the asound.conf for LSP:<br/>
 ```sudo install -m 644 asound.conf_lsp /etc```
 
 Create a link to the file that you want to be active:<br/>
