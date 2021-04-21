@@ -1,5 +1,5 @@
 # LMS
-If you want to run LMS in a Docker container, you can use. I use the image from here:
+If you want to run LMS in a Docker container, you can use this image:
 https://hub.docker.com/r/lmscommunity/logitechmediaserver
 
 Alternatively, download LMS from the link below and then install it:
