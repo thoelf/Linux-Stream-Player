@@ -70,6 +70,9 @@ Unzip the downloaded file and cd into the unzipped directory.
 Install the binary file with this command:<br/>
 ```sudo install -m 750 -g audio camilladsp /usr/local/bin```
 
+## Install the configuration files
+TBD
+
 # Installing the files for LSP
 ## General
 Download the files from this page with this command:<br/>
