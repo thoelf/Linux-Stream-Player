@@ -43,7 +43,7 @@ Install the binary file:<br/>
 ```sudo install -m 750 -g audio squeezelite /usr/local/bin```
 
 # CamillaDSP
-## Compiling from source - alt 1
+## Getting the binary file - Alt 1: Compile from source
 Download the source code file with this command:<br/>
 ```wget https://github.com/HEnquist/camilladsp/releases/<the release of your choice>```
 
@@ -56,7 +56,7 @@ Compile CamillaDSP with for example this command:<br/>
 
 cd into .../camilladsp-\<version number\>/target/release
 
-## Downloading the binary file - alt 2
+## Getting the binary file - Alt 2: Download an already compiled file
 Download the compiled program file with this command:<br/>
 ```wget https://github.com/HEnquist/camilladsp/releases/<the release of your choice>```
 
@@ -76,4 +76,4 @@ Install the control scripts with this command:<br/>
 ```install -m 750 -g audio lasp-control.sh lasp-dac_added.sh lasp-samplerate.py /usr/local/bin```
 
 Install the service definition files with this command:<br/>
-```install -m 644 lasp-control.service lasp-restore_state.service lasp-samplerate.service```
+```install -m 644 lasp-control.service lasp-restore_state.service lasp-samplerate.service squeezelite.service /etc/systemd/system```
