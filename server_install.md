@@ -89,7 +89,7 @@ If follow this procedure, LSP will select the latest play mode after a reboot.
 Install the control script with this command:<br/>
 ```install -m 750 -g audio lasp-dac_added.sh /usr/local/bin```
 
-Install the service definition files with this command:<br/>
+Install the service definition file with this command:<br/>
 ```install -m 644 lasp-restore_state.service /etc/systemd/system```
 
 List your USB devices with this command:<br/>
