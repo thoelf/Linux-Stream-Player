@@ -9,14 +9,14 @@ When you have LMS up and running, browse to http://\<IP address\>:9000. Install 
 Install MPD from the built-in repositories or from a source of your choice.
 
 There are some configuration to do in /etc/mpd.conf, for example:<br/>
-```audio_output {
+```audio_output \{
 	type		"alsa"
 	device          "hw:CARD=Loopback,DEV=1"
         format		"*:*:2"
         auto_format	"no"
         auto_resample	"no"
         ...
-}
+\}
 ```
 
 How to get the device is TBD.
@@ -53,7 +53,7 @@ Compile CamillaDSP with for example this command:<br/>
 cd into .../camilladsp-\<version number\>/target/release
 
 ## Downloading the binary file - alt 2
-Download the compiled program file with this command:
+Download the compiled program file with this command:<br/>
 ```wget https://github.com/HEnquist/camilladsp/releases/<the release of your choice>```
 
 Unzip the file and cd into the unzipped directory.
@@ -63,7 +63,7 @@ Install the binary file with this command:<br/>
 ```sudo install -m 750 -g audio camilladsp /usr/local/bin```
 
 # Installing the files for LSP
-Download the files from this page (https://github.com/thoelf/Linux-Stream-Player) with this command:<br/>
+Download the files from this page with this command:<br/>
 ```wget https://github.com/thoelf/Linux-Stream-Player/archive/refs/heads/main.zip```
 
 Unzip the file and cd into the unzipped directory.
