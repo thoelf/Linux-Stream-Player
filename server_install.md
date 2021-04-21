@@ -73,7 +73,7 @@ Install the binary file:<br/>
 ## Install the configuration files
 TBD
 
-# Edit asound.conf
+# Install and edit asound.conf
 Back up your existing /etc/asound.conf:<br/>
 ```sudo cp /etc/asound.conf /etc/asound.conf_orig```
 
@@ -82,6 +82,8 @@ Install the asound.conf from LSP:<br/>
 
 Create a link to the file that you want to be active:<br/>
 ```sudo ln -s /etc/asound.conf_lsp /etc/asound.conf```
+
+Edit asound.conf ... TBD
 
 # Installing the files for LSP
 ## General
@@ -99,6 +101,11 @@ Install the service definition files:<br/>
 Disable the two services that should not autostart:<br/>
 ```sudo systemctl disable lasp-samplerate.service```<br/>
 ```sudo systemctl disable squeezelite.service```
+
+Install the file that configures the creation of temporary files at boot:<br/>
+```sudo install -m 644 lasp.conf /etc/tmpfiles.d/lasp.conf```
+
+Edit the file and replace "thomas" with your own user name.
 
 ## Installation if you are using a USB DAC (not necessary)
 Follow this procedure if you want LSP to select the latest play mode after a reboot.
