@@ -40,14 +40,14 @@ Unzip the downloaded file and cd into the unzipped directory.
 
 ## Install the binary file
 Install the binary file:<br/>
-```sudo install -m 750 -g audio /usr/local/bin```
+```sudo install -m 750 -g audio squeezelite /usr/local/bin```
 
 # CamillaDSP
 ## Compiling from source - alt 1
 Download the source code file with this command:<br/>
 ```wget https://github.com/HEnquist/camilladsp/releases/<the release of your choice>```
 
-Read the instructions on [CamillaDSP on GitHub](https://github.com/HEnquist/camilladsp) to know what is required to compile from source.
+Read the instructions on https://github.com/HEnquist/camilladsp to know what is required to compile from source.
 
 Unzip the downloaded file and cd into the unzipped directory.
 
