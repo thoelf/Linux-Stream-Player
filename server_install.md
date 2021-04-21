@@ -9,14 +9,15 @@ When you have LMS up and running, browse to http://\<IP address\>:9000. Install 
 Install MPD from the built-in repositories or from a source of your choice.
 
 There are some configuration to do in /etc/mpd.conf, for example:<br/>
-```audio_output \{
+```
+audio_output {
 	type		"alsa"
 	device          "hw:CARD=Loopback,DEV=1"
         format		"*:*:2"
         auto_format	"no"
         auto_resample	"no"
         ...
-\}
+}
 ```
 
 How to get the device is TBD.
