@@ -26,18 +26,18 @@ How to get the device is TBD.
 
 # SqueezeLite
 ## Getting the binary file - Alt 1: Compile from source
-Download the zipped files with this command:<br/>
+Download the zipped files:<br/>
 ```wget https://github.com/ralph-irving/squeezelite/archive/refs/heads/master.zip```
 
 Unzip the downloaded file and cd into the unzipped directory.
 
-Compile SquuezeLite with this command:<br/>
+Compile SquuezeLite:<br/>
 ```make```
 
 You might not have the necessary packages to run make. Install any missing package and try again.
 
 ## Getting the binary file - Alt 2: Download an already compiled file
-Download the already compiled program with his command:<br/>
+Download the already compiled program:<br/>
 ```wget https://sourceforge.net/projects/lmsclients/files/squeezelite/linux/<the release of your choice>```
 
 Unzip the downloaded file and cd into the unzipped directory.
@@ -48,7 +48,7 @@ Install the binary file:<br/>
 
 # CamillaDSP
 ## Getting the binary file - Alt 1: Compile from source
-Download the source code file with this command:<br/>
+Download the source code file:<br/>
 ```wget https://github.com/HEnquist/camilladsp/releases/<the release of your choice>```
 
 Read the instructions on https://github.com/HEnquist/camilladsp to know what is required to compile from source.
@@ -61,44 +61,62 @@ Compile CamillaDSP with for example this command:<br/>
 cd into .../camilladsp-\<version number\>/target/release
 
 ## Getting the binary file - Alt 2: Download an already compiled file
-Download the compiled program file with this command:<br/>
+Download the compiled program file:<br/>
 ```wget https://github.com/HEnquist/camilladsp/releases/<the release of your choice>```
 
 Unzip the downloaded file and cd into the unzipped directory.
 
 ## Install the binary file
-Install the binary file with this command:<br/>
+Install the binary file:<br/>
 ```sudo install -m 750 -g audio camilladsp /usr/local/bin```
 
 ## Install the configuration files
 TBD
 
+# Edit asound.conf
+Back up your existing /etc/asound.conf:
+```sudo cp /etc/asound.conf /etc/asound.conf_orig```
+
+Install the asound.conf from LSP:
+```sudo install -m 644 asound.conf_lsp /etc```
+
+Create a link to the file that you want to be active:
+```sudo ln -s /etc/asound.conf_lsp /etc/asound.conf```
+
 # Installing the files for LSP
 ## General
-Download the files from this page with this command:<br/>
+Download the files:<br/>
 ```wget https://github.com/thoelf/Linux-Stream-Player/archive/refs/heads/main.zip```
 
 Unzip the downloaded file and cd into the unzipped directory.
 
-Install the control scripts with this command:<br/>
-```install -m 750 -g audio lasp-control.sh lasp-dac_added.sh lasp-samplerate.py /usr/local/bin```
+Install the control scripts:<br/>
+```sudo install -m 750 -g audio lasp-control.sh lasp-dac_added.sh lasp-samplerate.py /usr/local/bin```
 
-Install the service definition files with this command:<br/>
-```install -m 644 lasp-control.service lasp-samplerate.service squeezelite.service /etc/systemd/system```
+Install the service definition files:<br/>
+```sudo install -m 644 lasp-control.service lasp-samplerate.service squeezelite.service /etc/systemd/system```
+
+Disable the two services that should not autostart:
+```sudo systemctl disable lasp-samplerate.service```
+```sudo systemctl disable squeezelite.service```
 
 ## Installation if you are using a USB DAC (not necessary)
-If follow this procedure, LSP will select the latest play mode after a reboot.
+Follow this procedure if you want LSP to select the latest play mode after a reboot.
 
-Install the control script with this command:<br/>
-```install -m 750 -g audio lasp-dac_added.sh /usr/local/bin```
+Install the control script:<br/>
+```sudo install -m 750 -g audio lasp-dac_added.sh /usr/local/bin```
 
-Install the service definition file with this command:<br/>
-```install -m 644 lasp-restore_state.service /etc/systemd/system```
+Install the service definition file:<br/>
+```sudo install -m 644 lasp-restore_state.service /etc/systemd/system```
 
-List your USB devices with this command:<br/>
+Enable the service:<br/>
+```sudo systemctl enable lasp-restore_state.service```
+
+Install the udev rule for the DAC:<br/>
+```sudo install -m 644 90-dac.rules /etc/udev/rules.d```
+
+Connect the DAC and power it on, then list your USB devices:<br/>
 ```lsusb```
 
-Edit the file [90-dac.rules](./90-dac.rules) so that the idVendor and idProduct attribute matches your DAC.
-
-Install the udev rule with this command:<br/>
-```install -m 644 90-dac.rules /etc/udev/rules.d```
+Edit the udev rule so that the idVendor and idProduct attribute matches your DAC:<br/>
+```sudo nano /etc/udev/rules.d/90-dac.rules```
