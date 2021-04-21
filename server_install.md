@@ -26,7 +26,8 @@ How to get the device is TBD.
 
 # SqueezeLite
 ## Getting the binary file - Alt 1: Compile from source
-Download the zipped files from https://github.com/ralph-irving/squeezelite with this command:
+Download the zipped files from with this command:
+
 ```wget https://github.com/ralph-irving/squeezelite/archive/refs/heads/master.zip```
 
 Unzip and cd into the unzipped directory.
