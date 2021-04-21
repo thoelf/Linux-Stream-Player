@@ -1,15 +1,14 @@
 # LMS
-If you want to run LMS in a Docker container, you can use this image:  https://hub.docker.com/r/lmscommunity/logitechmediaserver
+If you want to run LMS in a Docker container, you can use this image:<br/>https://hub.docker.com/r/lmscommunity/logitechmediaserver
 
-Alternatively, download LMS from the link below and then install it:  https://www.mysqueezebox.com/
+Alternatively, download LMS from the link below and then install it:<br/>https://www.mysqueezebox.com/
 
 When you have LMS up and running, browse to http://<IP address>:9000. Install the plugins that you want to use and do any configuration you find suitable. I recommend the plugin for Material Skin.
 
 # MPD
 Install MPD from the built-in repositories or from a source of your choice.
 
-There are some configuration to do with MPD, for example:
-
+There are some configuration to do with MPD, for example:<br/>
 ```audio_output {
 	type		"alsa"
 	device          "hw:CARD=Loopback,DEV=1"
