@@ -17,6 +17,8 @@ Note: The directory is hidden.
 Install the configuration file for LSP on the client:<br/>
 ```install -m 640 lsp.conf /home/<user>/.lsp```
 
+Edit lsp.conf and add the missing data.
+
 The .lsp direcory will also include an automatically created file named selected_player.txt. The file includes "mpd" or "squeeze" depending on the selected play method.
 
 ## Install Cairo dock (optional)
