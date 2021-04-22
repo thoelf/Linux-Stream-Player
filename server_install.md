@@ -114,7 +114,7 @@ Install the file that configures the creation of temporary files at boot:<br/>
 
 Edit the file and replace "thomas" with your own user name.
 
-## Installation if you are using a USB DAC (not necessary)
+## Installation if you are using a USB DAC (optional)
 Follow this procedure if you want LSP to select the latest play mode after a reboot.
 
 Install the control script:<br/>
