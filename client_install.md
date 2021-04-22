@@ -26,8 +26,13 @@ Edit lsp.conf and add the missing data.
 
 The .lsp direcory will also include an automatically created file named selected_player.txt. The file includes "mpd" or "squeeze" depending on the selected play method.
 
+## Install VLC
+Install VLC:<br/>
+```sudo apt install vlc```
+
 ## Install Cairo dock (optional)
-Install the Cairo-Dock package from the repositories.
+Install the Cairo dock:<br/>
+```sudo apt install cairo-dock```
 
 Create a directory for icons, e.g.:<br/>
 ```mkdir /home/<user>/bin/icons```
