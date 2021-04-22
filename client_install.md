@@ -30,6 +30,12 @@ The .lsp direcory will also include an automatically created file named selected
 Install VLC:<br/>
 ```sudo apt install vlc```
 
+## Change the resampling quality (optional)
+If you like, edit /etc/pulse/daemon.conf to resample with a higher quality, e.g.:<br/>
+```resample-method = speex-float-7```
+
+Note that this setting will only effect the sound streamed from the client. No resamling is taking place when playing with LMS on the server.
+
 ## Install Cairo dock (optional)
 Install the Cairo dock:<br/>
 ```sudo apt install cairo-dock```
