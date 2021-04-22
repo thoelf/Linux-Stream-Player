@@ -1,9 +1,9 @@
 # Introduction to the Linux Stream Player (LSP)
-LSP is a set of scripts, third party programs and configurations that allows you to play music on a headless Linux computer, from now on called the "server". You can control the music from a mobile app or a from web browser on a Linux computer, from now on called the "client".
+LSP is a set of scripts, third party programs and configurations that allows you to play music from files or streaming services on a headless Linux computer, from now on called the "server". You can control the music from a mobile app or a from web browser on a Linux computer, from now on called the "client".
 
 LSP is designed to meet my personal goals for how I want to play music at home. The intention is not to make a solution for all sorts of use cases or to support other platforms and applications that the ones I use. Nevertheless, with some tweaking you should be able to adopt it to your needs.
 
-LSP is tested to work with Ubuntu Server 20.04 on the server and Ubuntu Desktop 20.10 on the client.
+LSP is tested to work with Ubuntu Server on the server and Ubuntu Desktop on the client.
 
 # Playing music locally on the server
 LSP uses LMS (Logitech Media Server) with SqueezeLite as the player. Both programs are installed on the server and plays local and streamed music. My source of streamed music is Deezer, but other streaming services are supported and available as plugins to LMS.
@@ -31,6 +31,8 @@ The audio stream is resampled to 44.1 kHz on the client. You should be able to c
 When all is set up and working, the browser is started from Cairo dock. Clicking on the icon in the dock runs a script that sets the nullsink for the browser and then starts the browser.
 
 Another button on the dock is the stream selection button, which runs a script that toggles between the two streaming methods.
+
+You can of course run the scripts in any way you like, for example by double-clicking on the or making program starters in the Ubuntu dock.
 
 # Room EQ with CamillaDSP
 LSP uses CamillaDSP for room EQ. I have got my filter parameters from measurements using a USB microphone and REW. When starting out, you can start with no filters and then add filters in the future.
