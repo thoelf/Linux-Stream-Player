@@ -9,6 +9,11 @@ Install the script for selecting play method:<br/>
 Install the script that sets the nullsink and starts the browser:<br/>
 ```install -m 750 audio_ff.sh /home/<user>/bin```
 
+Find the pulse source:
+```pactl list | grep -A2 'Source #' | grep 'Name: ' | cut -d" " -f2 | head -1```
+
+Edit audio_ff.sh and replace the existing pulse source with the output from the command above. You can also change the browser if you like.
+
 Create the directory for the configuration files:<br/>
 ```mkdir /home/<user>/.lsp```
 
