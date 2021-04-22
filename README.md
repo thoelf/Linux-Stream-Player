@@ -34,6 +34,8 @@ Another button on the dock is the stream selection button, which runs a script t
 
 You can of course run the scripts in any way you like, for example by double-clicking on the or making program starters in the Ubuntu dock.
 
+The selection of player is shown using GNOME notifications. In the files for the client there is a one-liner script for Conky, if you want to use Conky to show which player that is selected.
+
 # Room EQ with CamillaDSP
 LSP uses CamillaDSP for room EQ. I have got my filter parameters from measurements using a USB microphone and REW. When starting out, you can start with no filters and then add filters in the future.
 
