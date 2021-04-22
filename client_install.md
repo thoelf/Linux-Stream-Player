@@ -1,21 +1,21 @@
 # Installing LSP on the client
 ## Install the scripts for LSP
 Create a directory for scripts, e.g.:<br/>
-```mkdir /home/\<user\>/bin```
+```mkdir /home/<user>/bin```
 
 Install the script for selecting play method:<br/>
-```install -m 750 lsp-select_player.sh /home/\<user\>/bin```
+```install -m 750 lsp-select_player.sh /home/<user>/bin```
 
 Install the script that sets the nullsink and starts the browser:<br/>
-```install -m 750 audio_ff.sh /home/\<user\>/bin```
+```install -m 750 audio_ff.sh /home/<user>/bin```
 
 Create the directory for the configuration files:<br/>
-```mkdir /home/\<user\>/.lsp```
+```mkdir /home/<user>/.lsp```
 
 Note: The directory is hidden.
 
 Install the configuration file for LSP on the client:<br/>
-```install -m 640 lsp.conf /home/\<user\>/.lsp```
+```install -m 640 lsp.conf /home/<user>/.lsp```
 
 The .lsp direcory will also include an automatically created file named selected_player.txt. The file includes "mpd" or "squeeze" depending on the selected play method.
 
@@ -23,10 +23,10 @@ The .lsp direcory will also include an automatically created file named selected
 Install the Cairo-Dock package from the repositories.
 
 Create a directory for icons, e.g.:<br/>
-```mkdir /home/\<user\>/bin/icons```
+```mkdir /home/<user>/bin/icons```
 
 Install the icons:<br/>
-```install -m 650 audio_ff.svg lsp_select_player.svg /home/\<user\>/bin/icons```
+```install -m 650 audio_ff.svg lsp_select_player.svg /home/<user>/bin/icons```
 
 Configure Cairo dock so that:
 * The button with audio_ff.svg as icon runs the audio_ff.sh script.
@@ -36,4 +36,4 @@ Configure Cairo dock so that:
 You can use Conky to show which play method that is selected. You are on your own with Conky.
 
 You can install this script to tell Conky which player that is selected:<br/>
-```install -m 750 conky_streaming.sh /home/\<use\>/bin```
+```install -m 750 conky_streaming.sh /home/<user>/bin```
