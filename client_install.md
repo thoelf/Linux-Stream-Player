@@ -31,13 +31,15 @@ Install VLC:<br/>
 ```sudo apt install vlc```
 
 ## Change the resampling quality (optional)
-If you like, edit /etc/pulse/daemon.conf to resample with a higher quality, e.g.:<br/>
+Edit /etc/pulse/daemon.conf to resample with a higher quality, e.g.:<br/>
 ```resample-method = speex-float-7```
 
-Note that this setting will only effect the sound streamed from the client. No resamling is taking place when playing with LMS on the server.
+Note that this setting will only effect the sound streamed from the client (or played on the client with other audio players). No resamling is taking place when playing with LMS on the server.
 
-## Install Cairo dock (optional)
-Install the Cairo dock:<br/>
+## Install Cairo-Dock (optional)
+Note: I haven't got Cairo-Dock working with Wayland on Ubuntu 21.04, but I think it "should" work.
+
+Install Cairo-Dock:<br/>
 ```sudo apt install cairo-dock```
 
 Create a directory for icons, e.g.:<br/>
@@ -46,7 +48,7 @@ Create a directory for icons, e.g.:<br/>
 Install the icons:<br/>
 ```install -m 650 audio_ff.svg lsp_select_player.svg /home/<user>/bin/icons```
 
-Configure Cairo dock so that:
+Configure Cairo-Dock so that:
 * The button with audio_ff.svg as icon runs the audio_ff.sh script.
 * The button with lsp_select_player.svg as icon runs the lsp_select_player.sh script.
 
