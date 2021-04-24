@@ -1,0 +1,39 @@
+pcm.!default { 
+   type plug
+   slave.pcm "camilladsp" 
+}
+ 
+pcm.camilladsp {
+    type plug
+    slave {
+	pcm {
+	    type	hw
+	    card	"Loopback"
+	    device	0
+	    channels	2
+	    format	"S32_LE"
+            rate	"44100"
+	}
+    }
+}
+
+ctl.!default {
+    type hw
+    card "Loopback"
+}
+
+ctl.camilladsp {
+        type	hw
+        card	"Loopback"
+}
+
+pcm.sound_out {
+        type hw
+        card 1
+        device 0
+}
+
+ctl.sound_out {
+    type hw
+    card 1
+}
