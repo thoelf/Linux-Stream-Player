@@ -1,0 +1,23 @@
+[Unit]
+Description=CamillaDSP Daemon
+After=syslog.target
+Wants=sound.target
+After=sound.target
+#After=dev-dac.device
+StartLimitIntervalSec=10
+StartLimitBurst=10
+
+[Service]
+User=<user>
+Group=audio
+Type=simple
+ExecStart=/usr/local/bin/camilladsp /etc/camilladsp.yml
+Restart=on-failure
+#Restart=always
+RestartSec=1
+StandardError=syslog
+SyslogIdentifier=camilladsp
+Nice=-1
+
+[Install]
+WantedBy=default.target
