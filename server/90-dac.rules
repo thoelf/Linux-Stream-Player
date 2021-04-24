@@ -1,0 +1,1 @@
+ACTION=="add", ATTRS{idVendor}=="2a39", ATTRS{idProduct}=="3fd3", SYMLINK+="dac", RUN+="/usr/local/bin/lsp-dac_added.sh"
