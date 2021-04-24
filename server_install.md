@@ -57,7 +57,7 @@ Install the binary file:<br/>
 Download the source code file:<br/>
 ```wget https://github.com/HEnquist/camilladsp/releases/<the release of your choice>```
 
-Read the instructions on (https://github.com/HEnquist/camilladsp) to know what is required to compile from source.
+Read the instructions on https://github.com/HEnquist/camilladsp to know what is required to compile from source.
 
 Unzip the downloaded file and cd into the unzipped directory.
 
