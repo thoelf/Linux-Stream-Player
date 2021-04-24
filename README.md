@@ -40,9 +40,9 @@ The selection of player is shown using GNOME notifications. In the files for the
 LSP uses CamillaDSP for room EQ. I have got my filter parameters from measurements using a USB microphone and REW. When starting out, you can start with no filters and then add filters in the future.
 
 # Links
-* LMS on Docker hub: https://hub.docker.com/r/lmscommunity/logitechmediaserver
+* LMS on Docker hub:<br/>https://hub.docker.com/r/lmscommunity/logitechmediaserver
 * LMS as a .deb file: https://www.mysqueezebox.com/download
-* The LMS app on F-Droidhttps://f-droid.org/en/packages/com.craigd.lmsmaterial.app/
+* The LMS app on F-Droid: https://f-droid.org/en/packages/com.craigd.lmsmaterial.app/
 * Material Skin for LMS: https://github.com/CDrummond/lms-material
 * SqueezeLite on GitHub: https://github.com/ralph-irving/squeezelite
 * CamillaDSP on GitHub: https://github.com/HEnquist/camilladsp
