@@ -40,18 +40,19 @@ The selection of player is shown using GNOME notifications. In the files for the
 LSP uses CamillaDSP for room EQ. I have got my filter parameters from measurements using a USB microphone and REW. When starting out, you can start with no filters and then add filters in the future.
 
 # Links
-* [LMS on Docker hub](https://hub.docker.com/r/lmscommunity/logitechmediaserver)
-* [LMS as a .deb file](https://www.mysqueezebox.com/download)
-* [The LMS app on F-Droid](https://f-droid.org/en/packages/com.craigd.lmsmaterial.app/)
-* [Material Skin for LMS](https://github.com/CDrummond/lms-material)
-* [SqueezeLite on GitHub](https://github.com/ralph-irving/squeezelite)
-* [CamillaDSP on GitHub](https://github.com/HEnquist/camilladsp)
-* [CamillaDSP on diyAudio](https://www.diyaudio.com/forums/pc-based/349818-camilladsp-cross-platform-iir-fir-engine-crossovers-correction-etc.html)
-* [Room EQ Wizard, REW](https://www.roomeqwizard.com/)
+* LMS on Docker hub: https://hub.docker.com/r/lmscommunity/logitechmediaserver
+* LMS as a .deb file: https://www.mysqueezebox.com/download
+* The LMS app on F-Droidhttps://f-droid.org/en/packages/com.craigd.lmsmaterial.app/
+* Material Skin for LMS: https://github.com/CDrummond/lms-material
+* SqueezeLite on GitHub: https://github.com/ralph-irving/squeezelite
+* CamillaDSP on GitHub: https://github.com/HEnquist/camilladsp
+* CamillaDSP on diyAudio: https://www.diyaudio.com/forums/pc-based/349818-camilladsp-cross-platform-iir-fir-engine-crossovers-correction-etc.html
+* Room EQ Wizard, REW: https://www.roomeqwizard.com/
 
 # A note about the software used or referenced
 The software in LSP and all software used by LSP, is free and open source software. The REW software, which is not strictly needed, is closed source software that is free of cost, i.e. freeware.
 
 # Installing the software - Work in progress... 
-Follow the procedure in [server_install.md](./server_install.md) to install software on the server.
-Follow the procedure in [client_install.md](./client_install.md) to install software on the client.
+Follow the procedure in [server_install.md](./server_install.md) to install software on the server. Follow the procedure in [client_install.md](./client_install.md) to install software on the client.
+
+The installation procedure has not been tested from A to Z, but has been recreated from an existing installation.
