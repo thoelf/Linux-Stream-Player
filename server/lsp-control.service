@@ -8,7 +8,7 @@ StartLimitIntervalSec=10
 StartLimitBurst=10
 
 [Service]
-User=thomas
+User=<user>
 Group=audio
 Type=simple
 ExecStart=/usr/local/bin/lsp-control.sh
