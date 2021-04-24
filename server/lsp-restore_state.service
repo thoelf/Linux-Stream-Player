@@ -7,7 +7,7 @@ User=<user>
 Group=audio
 Type=oneshot
 ExecStartPre=/usr/bin/sleep 15
-ExecStart=/usr/local/bin/lasp-dac_added.sh
+ExecStart=/usr/local/bin/lsp-dac_added.sh
 
 [Install]
 WantedBy=multi-user.target
