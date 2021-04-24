@@ -41,13 +41,13 @@ LSP uses CamillaDSP for room EQ. I have got my filter parameters from measuremen
 
 # Links
 * LMS on Docker hub:<br/>https://hub.docker.com/r/lmscommunity/logitechmediaserver
-* LMS as a .deb file: https://www.mysqueezebox.com/download
-* The LMS app on F-Droid: https://f-droid.org/en/packages/com.craigd.lmsmaterial.app/
-* Material Skin for LMS: https://github.com/CDrummond/lms-material
-* SqueezeLite on GitHub: https://github.com/ralph-irving/squeezelite
-* CamillaDSP on GitHub: https://github.com/HEnquist/camilladsp
-* CamillaDSP on diyAudio: https://www.diyaudio.com/forums/pc-based/349818-camilladsp-cross-platform-iir-fir-engine-crossovers-correction-etc.html
-* Room EQ Wizard, REW: https://www.roomeqwizard.com/
+* LMS as a .deb file:<br/>https://www.mysqueezebox.com/download
+* The LMS app on F-Droid:<br/>https://f-droid.org/en/packages/com.craigd.lmsmaterial.app/
+* Material Skin for LMS:<br/>https://github.com/CDrummond/lms-material
+* SqueezeLite on GitHub:<br/>https://github.com/ralph-irving/squeezelite
+* CamillaDSP on GitHub:<br/>https://github.com/HEnquist/camilladsp
+* CamillaDSP on diyAudio:<br/>https://www.diyaudio.com/forums/pc-based/349818-camilladsp-cross-platform-iir-fir-engine-crossovers-correction-etc.html
+* Room EQ Wizard, REW:<br/>https://www.roomeqwizard.com/
 
 # A note about the software used or referenced
 The software in LSP and all software used by LSP, is free and open source software. The REW software, which is not strictly needed, is closed source software that is free of cost, i.e. freeware.
