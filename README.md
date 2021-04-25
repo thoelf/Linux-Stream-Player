@@ -6,7 +6,7 @@ LSP is designed to meet my personal goals for how I want to play music at home. 
 LSP is tested to work with Ubuntu Server on the server and Ubuntu Desktop on the client.
 
 # Playing music locally on the server
-LSP uses LMS (Logitech Media Server) with SqueezeLite as the player. Both programs are installed on the server and plays local and streamed music. My source of streamed music is Deezer, but other streaming services are supported and available as plugins to LMS.
+LSP uses LMS (Logitech Media Server) with SqueezeLite as the player. Both programs are installed on the server and plays local and streamed music. My source of streamed music is mainly Deezer, but other streaming services are supported and available as plugins to LMS.
 
 Personally, I prefer to run LMS in a Docker container. LMS can also be installed as a .deb file.
 
