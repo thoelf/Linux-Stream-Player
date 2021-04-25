@@ -49,10 +49,8 @@ LSP uses CamillaDSP for room EQ. I have got my filter parameters from measuremen
 * CamillaDSP on diyAudio:<br/>https://www.diyaudio.com/forums/pc-based/349818-camilladsp-cross-platform-iir-fir-engine-crossovers-correction-etc.html
 * Room EQ Wizard, REW:<br/>https://www.roomeqwizard.com/
 
-# A note about the software used or referenced
-The software in LSP and all software used by LSP, is free and open source software. The REW application, which is not strictly needed, is closed source software that is free of cost, i.e. freeware.
-
-# Installing the software - Work in progress... 
+# Installing and configuring the software 
 Follow the procedures in [server_install.md](./server_install.md) to install software on the server. Follow the procedures in [client_install.md](./client_install.md) to install software on the client.
 
-The installation procedure has not been tested from A to Z, but has been recreated from an existing installation.
+# A note about the software used or referenced
+The software in LSP and all software used by LSP, is free and open source software. The REW application, which is not strictly needed, is closed source software that is free of cost, i.e. freeware.
