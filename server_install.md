@@ -82,9 +82,6 @@ Install the service file:<br/>
 
 Replace any occurence of ```<user>``` with the user you want to run the services (i.e. yourself or a system user).
 
-Disable the service, because it should not autostart:<br/>
-```sudo systemctl disable camilladsp.service```
-
 ## Install the configuration files
 TBD
 
@@ -137,9 +134,8 @@ Replace any occurence of ```<user>``` with the user you want to run the services
 
 Edit ```squeezelite.service``` so that the sample rate range and IP address matches your system.
 
-Disable the two services that should not autostart:<br/>
-```sudo systemctl disable lasp-samplerate.service```<br/>
-```sudo systemctl disable squeezelite.service```
+Enable the lsp-control service:<br/>
+```sudo systemctl enable lsp-control.service```
 
 Install the file that configures the creation of temporary files at boot:<br/>
 ```sudo install -m 644 lasp.conf /etc/tmpfiles.d/lsp.conf```
