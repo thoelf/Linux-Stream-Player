@@ -86,7 +86,9 @@ Replace any occurence of ```<user>``` with the user you want to run the services
 Install the example files for CamillaDSP:<br/>
 ```sudo install -m 644 -g audio camilladsp_44100_squeeze.yml camilladsp_44100.yml /etc```
 
-Edit the filter settings to suit your needs. Add more file for the samplerates you want to support.
+Use the ```aplay -l``` command to find the capture and playback devices.
+
+Edit the filter settings to suit your needs. Add more files for the samplerates you want to support.
 
 Create a link to the configuration file you want to be default when playing with MPD, e.g.:<br/>
 ```sudo ln -s /etc/camilladsp_44100.yml /etc/camilladsp.yml```
