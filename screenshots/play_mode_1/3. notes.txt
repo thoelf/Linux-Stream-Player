@@ -1,5 +1,0 @@
-```1. streaming from the browser on the client.png```<br/>
-Streaming from the broweser on the client to the server.
-
-```2. services and samplerate.png```
-The services for CamillaDSP, MPD and Squeezebox server (LMS) are active. The DAC is playing at 44.1 kHz. The samplerate is static in this mode.
