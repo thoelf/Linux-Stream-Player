@@ -1,0 +1,8 @@
+<user> ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart camilladsp.service
+<user> ALL=(ALL) NOPASSWD: /usr/bin/systemctl stop camilladsp.service
+<user> ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart lsp-samplerate.service
+<user> ALL=(ALL) NOPASSWD: /usr/bin/systemctl stop lsp-samplerate.service
+<user> ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart mpd.service
+<user> ALL=(ALL) NOPASSWD: /usr/bin/systemctl stop mpd.service
+<user> ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart squeezelite.service
+<user> ALL=(ALL) NOPASSWD: /usr/bin/systemctl stop squeezelite.service
