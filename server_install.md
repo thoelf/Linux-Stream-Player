@@ -88,7 +88,7 @@ Install the example files for CamillaDSP:<br/>
 
 Edit the filter settings to suit your needs. Add more file for the samplerates you want to support.
 
-Create a link to the configuration file you want to be default when playing with MPD, e.g.:
+Create a link to the configuration file you want to be default when playing with MPD, e.g.:<br/>
 ```sudo ln -s /etc/camilladsp_44100.yml /etc/camilladsp.yml```
 
 # Install a loopback interface
