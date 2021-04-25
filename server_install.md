@@ -80,7 +80,7 @@ Install the binary file:<br/>
 Install the service file:<br/>
 ```sudo install -m 644 camilladsp.service /etc/systemd/system```
 
-Replace any occurence of ```<user>``` with the user you want to run the services (i.e. yourself or a system user).
+Replace any occurence of ```<user>``` with the user you want to run the services (yourself or a system user).
 
 ## Install the configuration files
 TBD
@@ -130,9 +130,14 @@ Install the control scripts:<br/>
 Install the service definition files:<br/>
 ```sudo install -m 644 lsp-control.service lsp-samplerate.service squeezelite.service /etc/systemd/system```
 
-Replace any occurence of ```<user>``` with the user you want to run the services (i.e. yourself or a system user).
+Replace any occurence of ```<user>``` with the user you want to run the services (yourself or a system user).
 
 Edit ```squeezelite.service``` so that the sample rate range and IP address matches your system.
+
+Add the sudo rules, for a user other than root to be able to manage the services:<br/>
+```install -m 440 lsp-sudo /etc/sudoers.d```
+
+Edit ```lsp-sudo``` using ```visudo``` and replace any occurence of ```<user>``` with the user you want to run the services (yourself or a system user).
 
 Enable the lsp-control service:<br/>
 ```sudo systemctl enable lsp-control.service```
@@ -140,7 +145,7 @@ Enable the lsp-control service:<br/>
 Install the file that configures the creation of temporary files at boot:<br/>
 ```sudo install -m 644 lsp.conf /etc/tmpfiles.d/lsp.conf```
 
-Replace any occurence of ```<user>``` with the user you want to run the services (i.e. yourself or a system user).
+Replace any occurence of ```<user>``` with the user you want to run the services (yourself or a system user).
 
 ## Make your selected user member of the audio group
 Add your user to the audio group:<br/>
