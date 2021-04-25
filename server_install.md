@@ -138,7 +138,7 @@ Enable the lsp-control service:<br/>
 ```sudo systemctl enable lsp-control.service```
 
 Install the file that configures the creation of temporary files at boot:<br/>
-```sudo install -m 644 lasp.conf /etc/tmpfiles.d/lsp.conf```
+```sudo install -m 644 lsp.conf /etc/tmpfiles.d/lsp.conf```
 
 Replace any occurence of ```<user>``` with the user you want to run the services (i.e. yourself or a system user).
 
@@ -156,7 +156,7 @@ Install the service definition file:<br/>
 ```sudo install -m 644 lsp-restore_state.service /etc/systemd/system```
 
 Enable the service:<br/>
-```sudo systemctl enable lasp-restore_state.service```
+```sudo systemctl enable lsp-restore_state.service```
 
 Install the udev rule for the DAC:<br/>
 ```sudo install -m 644 90-dac.rules /etc/udev/rules.d```
