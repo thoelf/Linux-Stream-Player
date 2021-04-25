@@ -5,7 +5,7 @@
 
 devices:
   samplerate: 44100
-  chunksize: 4096
+  chunksize: 2048
   silence_threshold: -60
   silence_timeout: 3.0
   queuelimit: 1
