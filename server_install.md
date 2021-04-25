@@ -82,8 +82,14 @@ Install the service file:<br/>
 
 Replace any occurence of ```<user>``` with the user you want to run the services (yourself or a system user).
 
-## Install the configuration files
-TBD
+## Install and edit the configuration files
+Install the example files for CamillaDSP:<br/>
+```sudo install -m 644 -g audio camilladsp_44100_squeeze.yml camilladsp_44100.yml /etc```
+
+Edit the filter settings to suit your needs. Add more file for the samplerates you want to support.
+
+Create a link to the configuration file you want to be default when playing with MPD, e.g.:
+```sudo ln -s /etc/camilladsp_44100.yml /etc/camilladsp.yml```
 
 # Install a loopback interface
 The loopback interface is used for CamillaDSP when streaming from the client, i.e. playing with MPD on the server.
