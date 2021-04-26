@@ -84,14 +84,13 @@ Replace any occurence of ```<user>``` with the user you want to run the services
 
 ## Install and edit the configuration files
 Install the example files for CamillaDSP:<br/>
-```sudo install -m 644 -g audio camilladsp_44100_squeeze.yml camilladsp_44100.yml /etc```
+```sudo install -m 644 -g audio camilladsp_squeeze.yml camilladsp.yml /etc```
 
-Use the ```aplay -l``` command to find the capture and playback devices.
+When playing with LMS and SqueezeLite, a copy of ```camilladsp_squeeze.yml``` in ```/tmp``` will be updated and reloaded when the samplerate changes. When streaming from the client, the file ```camilladsp.yml``` will be used with a static samplerate as defined in the file.
 
-Edit the filter settings to suit your needs. Add more files for the samplerates you want to support.
+When you edit the files, use the ```aplay -l``` command to find the capture and playback devices in your system.
 
-Create a link to the configuration file you want to be default when playing with MPD, e.g.:<br/>
-```sudo ln -s /etc/camilladsp_44100.yml /etc/camilladsp.yml```
+Edit the filter settings to suit your needs.
 
 # Install a loopback interface
 The loopback interface is used for CamillaDSP when streaming from the client, i.e. playing with MPD on the server.
