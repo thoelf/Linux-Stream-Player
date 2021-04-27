@@ -35,7 +35,7 @@ There might be other settings you might want, or have, to do in ```/etc/mpd.conf
 Download the zipped files:<br/>
 ```wget https://github.com/ralph-irving/squeezelite/archive/refs/heads/master.zip```
 
-Unzip the downloaded file and cd into the unzipped directory.
+Extract the downloaded file and cd into the extracted directory.
 
 Compile SquuezeLite:<br/>
 ```make```
@@ -46,7 +46,7 @@ You might not have the necessary packages to run make. Install any missing packa
 Download the already compiled program:<br/>
 ```wget https://sourceforge.net/projects/lmsclients/files/squeezelite/linux/<the release of your choice>```
 
-Unzip the downloaded file and cd into the unzipped directory.
+Extract the downloaded file and cd into the extracted directory.
 
 ## Install the binary file
 Install the binary file:<br/>
@@ -59,7 +59,7 @@ Download the source code file:<br/>
 
 Read the instructions on https://github.com/HEnquist/camilladsp to know what is required to compile from source.
 
-Unzip the downloaded file and cd into the unzipped directory.
+Extract the downloaded file and cd into the extracted directory.
 
 Compile CamillaDSP with for example this command:<br/>
 ```RUSTFLAGS='-C target-cpu=native' cargo build --release --no-default-features --features alsa-backend --features websocket```
@@ -70,7 +70,7 @@ cd into ```.../camilladsp-<version number>/target/release```
 Download the compiled program file:<br/>
 ```wget https://github.com/HEnquist/camilladsp/releases/<the release of your choice>```
 
-Unzip the downloaded file and cd into the unzipped directory.
+Extract the downloaded file and cd into the extracted directory.
 
 ## Install the binary file
 Install the binary file:<br/>
@@ -92,8 +92,16 @@ When you edit the files, use the ```aplay -l``` command to find the capture and 
 
 Edit the filter settings to suit your needs.
 
-# Install the python3-websocket module
-This module is used by ```lsp-samplerate.py``` to communicate with CamillaDSP. It is not the recommended method according to ```https://github.com/HEnquist/camilladsp/blob/master/websocket.md```, but it works for now.
+# Install the pyCamillaDSP library and the python3-websocket module
+This installation is made to let ```lsp-samplerate.py``` update CamillaDSP with the samplerate, when playing from LMS/SqueezeLite.
+
+Download pyCamillaDSP:<br/>
+```wget https://github.com/HEnquist/pycamilladsp/releases/<the release of your choice>```
+
+Extract the downloaded file and cd into the extracted directory.
+
+Install pyCamillaDSP (for all users):<br/>
+```sudo pip3 install .```
 
 Install the python3-websocket package:<br/>
 ```sudo apt install python3-websocket```
@@ -135,7 +143,7 @@ Edit ```asound.conf``` (or ```asound.conf_lsp```) so that:
 Download the files:<br/>
 ```wget https://github.com/thoelf/Linux-Stream-Player/archive/refs/heads/main.zip```
 
-Unzip the downloaded file and cd into the unzipped directory.
+Extract the downloaded file and cd into the extracted directory.
 
 Install the control scripts:<br/>
 ```sudo install -m 750 -g audio lsp-control.sh lsp-samplerate.py /usr/local/bin```
