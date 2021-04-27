@@ -92,6 +92,12 @@ When you edit the files, use the ```aplay -l``` command to find the capture and 
 
 Edit the filter settings to suit your needs.
 
+# Install the python3-websocket module
+This module is used by ```lsp-samplerate.py``` to communicate with CamillaDSP. It is not the recommended method according to ```https://github.com/HEnquist/camilladsp/blob/master/websocket.md```, but it works for now.
+
+Install the python3-websocket package:<br/>
+```sudo apt install python3-websocket```
+
 # Install a loopback interface
 The loopback interface is used for CamillaDSP when streaming from the client, i.e. playing with MPD on the server.
 
