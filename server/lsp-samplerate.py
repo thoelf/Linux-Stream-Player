@@ -1,41 +1,47 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
+# /etc/systemd/system/lsp-samplerate.service
+
 # This program extracts the sample rate from SqueezeLite's log messages, 
 # through a named pipe. The program updates CamillaDSP with a new configuration 
 # file according to the sample rate.
 
-from websocket import create_connection
-import json
-import yaml
+from camilladsp import CamillaConnection
 
+config_file = "/etc/camilladsp_squeeze.yml"
 pipe = "/run/squeeze"
-port = "1234"
+port = 1234
 samplerate_old = ""
 
-# Load the template configuration file for CamillaDSP
-with open('/etc/camilladsp_squeeze.yml', 'r') as template:
-    camilla_conf = yaml.safe_load(template)
+cdsp = CamillaConnection("127.0.0.1", port)
 
-# Open the fifo with log message from SqueezeLite
+try:
+    cdsp.connect()
+    conf = cdsp.read_config_file(config_file)
+except ConnectionRefusedError as e:
+    print("Cannot connect to CamillaDSP. Is it running? Error:", e)
+except CamillaError as e:
+    print("CamillaDSP replied with error:", e)
+except IOError as e:
+    print("Not connected to websocket:", e)
+
+# Open the fifo with log messages from SqueezeLite
 with open(pipe, 'r') as fifo:
     for line in fifo:
-        # Look for this string in the log messages from SqueezeLite
+        # Look for the samplerate in the log messages from SqueezeLite
         if "track start sample rate:" in line:
             word_list = line.rstrip().split()
             samplerate = word_list[6]
             if samplerate != samplerate_old:
                 samplerate_old = samplerate
-                camilla_conf['devices']['samplerate'] = int(samplerate)
-                # Write the new samplerate to the CamillaDSP config file
-                with open('/tmp/camilladsp_squeeze.yml', 'w') as f:
-                    yaml.dump(camilla_conf, f)
-                # Reload the configuration
-                conf = json.dumps({"SetConfigName": "/tmp/camilladsp_squeeze.yml"})
+                conf['devices']['samplerate'] = int(samplerate)
+                # Update CamillaDSP with the new samplerate
                 try:
-                    cdsp = create_connection("ws://127.0.0.1:" + port)
-                    cdsp.send(conf)
-                    cdsp.send(json.dumps("Reload"))
-                    cdsp.close()
-                except:
-                    pass
+                    cdsp.set_config(conf)
+                except ConnectionRefusedError as e:
+                    print("Cannot connect to CamillaDSP. Is it running? Error:", e)
+                except CamillaError as e:
+                    print("CamillaDSP replied with error:", e)
+                except IOError as e:
+                    print("Not connected to websocket:", e)
