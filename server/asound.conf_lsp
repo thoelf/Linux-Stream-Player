@@ -1,3 +1,5 @@
+# TO BE UPDATED!
+
 pcm.!default { 
    type plug
    slave.pcm "camilladsp" 
