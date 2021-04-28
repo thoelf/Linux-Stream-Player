@@ -76,7 +76,7 @@ Install the binary file:<br/>
 Install the example file:<br/>
 ```sudo install -m 644 -g audio camilladsp.yml /etc```
 
-The samplerate in the file is default. When playing with LMS/SqueezeLite, CamillaDSP will be updated with new a samplerate when the samplerate of the source changes. When streaming from the client, the samplerate is static, as defined in the file.
+The samplerate in the file is the default samplerate. When playing with LMS/SqueezeLite, CamillaDSP will be updated with new a samplerate when the samplerate of the source changes. When streaming from the client, the samplerate is static, as defined in the file.
 
 Edit the number in the ```device``` parameter, so that it matches the ouput of this command:<br/>
 ```cat /proc/asound/cards```
@@ -133,7 +133,7 @@ Edit ```squeezelite.service``` so that the samplerate range and IP address match
 Install the file with sudo rules, so that a user other than root can manage the services:<br/>
 ```install -m 440 lsp-sudo /etc/sudoers.d```
 
-Edit ```lsp-sudo``` using ```visudo``` and replace any occurence of ```<user>``` with the user you want to run the services (yourself or a system user).
+Edit ```lsp-sudo``` using ```visudo``` and replace any occurence of ```<user>``` with the user you want to manage the services. The user must be the same user that runs ```lsp-control.sh``` according to ```lsp-control.service```.
 
 Enable the lsp-control service:<br/>
 ```sudo systemctl enable lsp-control.service```
@@ -144,7 +144,7 @@ Install the file that configures the creation of temporary files at boot:<br/>
 Replace any occurence of ```<user>``` with the user you want to run the services (yourself or a system user).
 
 ## Make your selected user member of the audio group
-Add your user to the audio group:<br/>
+Add your user to the ```audio``` group:<br/>
 ```sudo usermod -aG audio <user>```
 
 ## Installation if you are using a USB DAC (optional)
@@ -165,5 +165,5 @@ Install the udev rule for the DAC:<br/>
 Connect the DAC and power it on, then list your USB devices:<br/>
 ```lsusb```
 
-Edit the udev rule so that the idVendor and idProduct attribute matches your DAC:<br/>
+Edit the udev rule so that the ```idVendor``` and ```idProduct``` attribute matches your DAC:<br/>
 ```sudo nano /etc/udev/rules.d/90-dac.rules```
