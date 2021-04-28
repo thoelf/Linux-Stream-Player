@@ -12,7 +12,7 @@ Install the script that sets the nullsink and starts the browser:<br/>
 Find the pulse source:<br/>
 ```pactl list | grep -A2 'Source #' | grep 'Name: ' | cut -d" " -f2 | head -1```
 
-Edit audio_ff.sh and replace the existing pulse source with the output from the command above. You can also change the browser if you like.
+Edit ```audio_ff.sh``` and replace the existing pulse source with the output from the command above. You can also change the browser if you like.
 
 Create the directory for the configuration files:<br/>
 ```mkdir /home/<user>/.lsp```
@@ -22,16 +22,16 @@ Note that the directory is hidden.
 Install the configuration file for LSP on the client:<br/>
 ```install -m 640 lsp.conf /home/<user>/.lsp```
 
-Edit lsp.conf and add the missing data.
+Edit the file and add the missing data.
 
-The .lsp direcory will also include an automatically created file named selected_player.txt. The file includes "mpd" or "squeeze" depending on the selected play method.
+The ```.lsp``` direcory will also include an automatically created file named ```selected_player.txt```. The file includes the text "mpd" or "squeeze" depending on the selected play method.
 
 ## Install VLC
 Install VLC:<br/>
 ```sudo apt install vlc```
 
 ## Change the resampling quality (optional)
-Edit /etc/pulse/daemon.conf to resample with a higher quality, e.g.:<br/>
+Edit ```/etc/pulse/daemon.conf``` to resample with a higher quality, e.g.:<br/>
 ```resample-method = speex-float-7```
 
 Note that this setting will only effect the sound streamed from the client (or played on the client with other audio players). No resamling is taking place when playing with LMS on the server.
@@ -49,8 +49,8 @@ Install the icons:<br/>
 ```install -m 650 audio_ff.svg lsp_select_player.svg /home/<user>/bin/icons```
 
 Configure Cairo-Dock so that:
-* The button with audio_ff.svg as icon runs the audio_ff.sh script.
-* The button with lsp_select_player.svg as icon runs the lsp_select_player.sh script.
+* The button with ```audio_ff.svg``` as icon runs the ```audio_ff.sh``` script.
+* The button with ```lsp_select_player.svg``` as icon runs the ```lsp_select_player.sh``` script.
 
 ## Install Conky (optional)
 You can use Conky to show which play method that is selected. You are on your own with Conky.
