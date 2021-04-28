@@ -72,11 +72,14 @@ Extract the downloaded file and cd into the extracted directory.
 Install the binary file:<br/>
 ```sudo install -m 750 -g audio camilladsp /usr/local/bin```
 
-## Install and edit the configuration files
-Install the example file for CamillaDSP:<br/>
+## Install and edit the configuration file
+Install the example file:<br/>
 ```sudo install -m 644 -g audio camilladsp.yml /etc```
 
 The samplerate in the file is default. When playing with LMS and SqueezeLite, CamillaDSP will be updated with new a samplerate when the samplerate of the source changes. When streaming from the client, the samplerate is static, as defined in the file.
+
+Edit the number in the device parameter, so that it matches the ouput of this command:<br/>
+```cat /proc/asound/cards```
 
 Edit the filter settings and add more filters to suit your needs.
 
@@ -93,6 +96,21 @@ Install pyCamillaDSP (for all users):<br/>
 
 Install the python3-websocket package:<br/>
 ```sudo apt install python3-websocket```
+
+# Editing asound.conf
+Edit the contents of asound.conf, so that the card number matches the devices parameter in ```/etc/camilladsp.yml```:
+```
+pcm.!default {
+        type hw
+        card <number>
+}
+
+ctl.!default {
+        type hw           
+        card <number>
+}
+```
+Depending on your configuration and knowledge, the file could look different.
 
 # Installing the files for LSP
 ## General
