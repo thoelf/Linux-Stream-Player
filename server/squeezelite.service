@@ -11,7 +11,7 @@ StartLimitBurst=10
 User=<user>
 Group=audio
 Type=simple
-ExecStart=/bin/bash -c '/usr/local/bin/squeezelite -o - -r 44100-768000 -d output=info -f /run/squeeze -s 10.0.10.121 | /usr/local/bin/camilladsp -p 1234 /etc/camilladsp_squeeze.yml'
+ExecStart=/bin/bash -c '/usr/local/bin/squeezelite -o - -r 44100-768000 -d output=info -f /run/squeeze -s 10.0.10.121 | /usr/local/bin/camilladsp -p 1234 /etc/camilladsp.yml'
 Restart=on-failure
 RestartSec=1
 StandardError=syslog
