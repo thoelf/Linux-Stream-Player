@@ -1,20 +1,23 @@
 # This is an example file for filter configuration in CamillaDSP,
-# to be used when streaming from the client to MPD.
+# to be used when using LMS with SqueezeLite. The file is a template 
+# file, that will be copied to /tmp and be updated when the samplerate 
+# changes. For every change in the samplerare, CamillaDSP will be updated 
+# with the new configuration.
 
 devices:
   samplerate: 44100
   chunksize: 2048
   silence_threshold: -60
   silence_timeout: 3.0
+  queuelimit: 1
   capture:
-    type: Alsa
+    type: Stdin
     channels: 2
-    device: "hw:Loopback,0" 
-    format: S16LE
+    format: S32LE
   playback:
     type: Alsa
     channels: 2
-    device: "hw:1"
+    device: sound_out
     format: S32LE
 
 filters:
@@ -68,4 +71,3 @@ pipeline:
       - clipgain
       - peaking_R1
       - peaking_R2
-      
