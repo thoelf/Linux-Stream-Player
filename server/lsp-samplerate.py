@@ -9,7 +9,7 @@
 
 from camilladsp import CamillaConnection
 
-config_file = "/etc/camilladsp_squeeze.yml"
+config_file = "/etc/camilladsp.yml"
 pipe = "/run/squeeze"
 port = 1234
 samplerate_old = ""
