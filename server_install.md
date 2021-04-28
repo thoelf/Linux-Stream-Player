@@ -20,11 +20,10 @@ Edit ```/etc/mpd.conf``` and add the device number for the DAC in the ```audio_o
 
 ```
 audio_output {
-	type		"alsa"
-	device          "hw:CARD=Loopback,DEV=1"
-        format		"*:*:2"
-        auto_format	"no"
-        auto_resample	"no"
+	type		"pipe"
+	name            "mpd_pipe"
+	format		"*:32:2"
+	command         "/usr/local/bin/camilladsp -p 1234 /etc/camilladsp.yml"
         ...
 }
 ```
@@ -76,19 +75,11 @@ Extract the downloaded file and cd into the extracted directory.
 Install the binary file:<br/>
 ```sudo install -m 750 -g audio camilladsp /usr/local/bin```
 
-## Install the service file
-Install the service file:<br/>
-```sudo install -m 644 camilladsp.service /etc/systemd/system```
-
-Replace any occurence of ```<user>``` with the user you want to run the services (yourself or a system user).
-
 ## Install and edit the configuration files
-Install the example files for CamillaDSP:<br/>
-```sudo install -m 644 -g audio camilladsp_squeeze.yml camilladsp.yml /etc```
+Install the example file for CamillaDSP:<br/>
+```sudo install -m 644 -g audio camilladsp.yml /etc```
 
-When playing with LMS and SqueezeLite, a copy of ```camilladsp_squeeze.yml``` in ```/tmp``` will be updated and reloaded when the samplerate changes. When streaming from the client, the file ```camilladsp.yml``` will be used with a static samplerate as defined in the file.
-
-When you edit the files, use the ```aplay -l``` command to find the capture and playback devices in your system.
+The samplerate in the file is default. When playing with LMS and SqueezeLite, CamillaDSP will be updated with new a samplerate when the samplerate of the source changes. When streaming from the client, the samplerate is static, as defined in the file.
 
 Edit the filter settings to suit your needs.
 
@@ -106,26 +97,11 @@ Install pyCamillaDSP (for all users):<br/>
 Install the python3-websocket package:<br/>
 ```sudo apt install python3-websocket```
 
-# Install a loopback interface
-The loopback interface is used for CamillaDSP when streaming from the client, i.e. playing with MPD on the server.
-
-Load the loopback kernel module:<br/>
-```sudo modprobe snd-aloop```
-
-If ```/etc/modules-load.d/aloop.conf``` is not present, create the file with this content:<br/>
-```
-# alsa loopback
-snd
-snd-timer
-snd-pcm
-snd-aloop
-```
-
 # Install and edit asound.conf
 Back up your existing ```/etc/asound.conf```:<br/>
 ```sudo cp /etc/asound.conf /etc/asound.conf_orig```
 
-Install the file ```asound.conf``` for LSP:<br/>
+Install the file ```asound.conf_lsp```:<br/>
 ```sudo install -m 644 asound.conf_lsp /etc```
 
 Create a link to the file that you want to be active:<br/>
