@@ -13,10 +13,7 @@ When you have LMS up and running, browse to ```http://<IP address>:9000```. Inst
 Install MPD:<br/>
 ```sudo apt install mpd```
 
-List your ALSA devices:<br/>
-```aplay -l```
-
-Edit ```/etc/mpd.conf``` and add the device number for the DAC in the ```audio_output``` section.
+Edit ```/etc/mpd.conf``` to pipe the stream to CamillaDSP.
 
 ```
 audio_output {
@@ -27,7 +24,7 @@ audio_output {
         ...
 }
 ```
-There might be other settings you might want, or have, to do in ```/etc/mpd.conf```.
+There might be other settings you might want to do in ```/etc/mpd.conf```.
 
 # SqueezeLite
 ## Getting the binary file - Alt 1: Compile from source
@@ -81,7 +78,7 @@ Install the example file for CamillaDSP:<br/>
 
 The samplerate in the file is default. When playing with LMS and SqueezeLite, CamillaDSP will be updated with new a samplerate when the samplerate of the source changes. When streaming from the client, the samplerate is static, as defined in the file.
 
-Edit the filter settings to suit your needs.
+Edit the filter settings and add more filters to suit your needs.
 
 # Install the pyCamillaDSP library and the python3-websocket module
 This installation is made to let ```lsp-samplerate.py``` update CamillaDSP with the samplerate, when playing from LMS/SqueezeLite.
@@ -112,9 +109,9 @@ Install the service definition files:<br/>
 
 Replace any occurence of ```<user>``` with the user you want to run the services (yourself or a system user).
 
-Edit ```squeezelite.service``` so that the sample rate range and IP address matches your system.
+Edit ```squeezelite.service``` so that the samplerate range and IP address matches your system.
 
-Add the sudo rules, for a user other than root to be able to manage the services:<br/>
+Add sudo rules, so that a user other than root can manage the services:<br/>
 ```install -m 440 lsp-sudo /etc/sudoers.d```
 
 Edit ```lsp-sudo``` using ```visudo``` and replace any occurence of ```<user>``` with the user you want to run the services (yourself or a system user).
