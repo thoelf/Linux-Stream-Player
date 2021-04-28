@@ -97,23 +97,6 @@ Install pyCamillaDSP (for all users):<br/>
 Install the python3-websocket package:<br/>
 ```sudo apt install python3-websocket```
 
-# Install and edit asound.conf
-Back up your existing ```/etc/asound.conf```:<br/>
-```sudo cp /etc/asound.conf /etc/asound.conf_orig```
-
-Install the file ```asound.conf_lsp```:<br/>
-```sudo install -m 644 asound.conf_lsp /etc```
-
-Create a link to the file that you want to be active:<br/>
-```sudo ln -s /etc/asound.conf_lsp /etc/asound.conf```
-
-List your ALSA devices:<br/>
-```aplay -l```
-
-Edit ```asound.conf``` (or ```asound.conf_lsp```) so that:
-* The device number in the ```pcm.camilladsp``` section equals the card number for the Loopback device in the previous step.
-* The card number in the ```pcm.sound_out``` and ```ctl.sound_out``` section equals the card number for the DAC in the previous step.
-
 # Installing the files for LSP
 ## General
 Download the files:<br/>
