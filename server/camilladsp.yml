@@ -17,7 +17,7 @@ devices:
   playback:
     type: Alsa
     channels: 2
-    device: sound_out
+    device: "hw:1"
     format: S32LE
 
 filters:
