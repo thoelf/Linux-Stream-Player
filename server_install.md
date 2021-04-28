@@ -24,7 +24,7 @@ audio_output {
         ...
 }
 ```
-There might be other settings you might want to do in ```/etc/mpd.conf```.
+There might be other settings you might want to do in this file.
 
 # SqueezeLite
 ## Getting the binary file - Alt 1: Compile from source
@@ -62,7 +62,7 @@ Compile CamillaDSP with for example this command:<br/>
 
 cd into ```.../camilladsp-<version number>/target/release```
 
-## Getting the binary file - Alt 2: Download an already compiled file
+## Getting the binary file - Alt 2: Download the already compiled program
 Download the compiled program file:<br/>
 ```wget https://github.com/HEnquist/camilladsp/releases/<the release of your choice>```
 
@@ -76,9 +76,9 @@ Install the binary file:<br/>
 Install the example file:<br/>
 ```sudo install -m 644 -g audio camilladsp.yml /etc```
 
-The samplerate in the file is default. When playing with LMS and SqueezeLite, CamillaDSP will be updated with new a samplerate when the samplerate of the source changes. When streaming from the client, the samplerate is static, as defined in the file.
+The samplerate in the file is default. When playing with LMS/SqueezeLite, CamillaDSP will be updated with new a samplerate when the samplerate of the source changes. When streaming from the client, the samplerate is static, as defined in the file.
 
-Edit the number in the device parameter, so that it matches the ouput of this command:<br/>
+Edit the number in the ```device``` parameter, so that it matches the ouput of this command:<br/>
 ```cat /proc/asound/cards```
 
 Edit the filter settings and add more filters to suit your needs.
@@ -98,7 +98,8 @@ Install the python3-websocket package:<br/>
 ```sudo apt install python3-websocket```
 
 # Editing asound.conf
-Edit the contents of asound.conf, so that the card number matches the devices parameter in ```/etc/camilladsp.yml```:
+Edit the contents of asound.conf, so that the card number matches the ```device``` parameter in ```/etc/camilladsp.yml```:
+
 ```
 pcm.!default {
         type hw
@@ -110,7 +111,7 @@ ctl.!default {
         card <number>
 }
 ```
-Depending on your configuration and knowledge, the file could look different.
+Depending on your configuration and knowledge, the file might look different.
 
 # Installing the files for LSP
 ## General
@@ -129,7 +130,7 @@ Replace any occurence of ```<user>``` with the user you want to run the services
 
 Edit ```squeezelite.service``` so that the samplerate range and IP address matches your system.
 
-Add sudo rules, so that a user other than root can manage the services:<br/>
+Install the file with sudo rules, so that a user other than root can manage the services:<br/>
 ```install -m 440 lsp-sudo /etc/sudoers.d```
 
 Edit ```lsp-sudo``` using ```visudo``` and replace any occurence of ```<user>``` with the user you want to run the services (yourself or a system user).
