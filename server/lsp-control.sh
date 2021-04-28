@@ -22,17 +22,14 @@ while :; do
 	sudo /usr/bin/systemctl stop squeezelite.service
         sudo /usr/bin/systemctl stop lsp-samplerate.service
         sudo /usr/bin/systemctl restart mpd.service
-        sudo /usr/bin/systemctl restart camilladsp.service
     elif [[ $action = squeeze ]]; then
 	echo squeeze > /var/tmp/lsp-player
 	sudo /usr/bin/systemctl stop mpd.service
-        sudo /usr/bin/systemctl stop camilladsp.service
         sudo /usr/bin/systemctl restart lsp-samplerate.service
 	sudo /usr/bin/systemctl restart squeezelite.service
     elif [[ $action = stop ]]; then
 	echo stop > /var/tmp/lasp-player
         sudo /usr/bin/systemctl stop mpd.service
-        sudo /usr/bin/systemctl stop camilladsp.service
 	sudo /usr/bin/systemctl stop squeezelite.service
         sudo /usr/bin/systemctl stop lsp-samplerate.service
     fi
