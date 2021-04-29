@@ -7,6 +7,7 @@ if ! [[ $# -eq 1 && ($ACTION = latest || $ACTION = mpd || $ACTION = squeeze || $
     exit 1
 fi
 
+# Find the latest play mode, or go for the default (mpd)
 if [[ $ACTION = latest ]]; then
     if [[ -f $HOME/.lsp/selected_player.txt ]]; then
         ACTION=$(head -1 $HOME/.lsp/selected_player.txt)
