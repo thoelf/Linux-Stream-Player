@@ -36,6 +36,14 @@ Edit ```/etc/pulse/daemon.conf``` to resample with a higher quality, e.g.:<br/>
 
 Note that this setting will only effect the sound streamed from the client (or played on the client with other audio players). No resamling is taking place when playing with LMS on the server.
 
+## Start the browser automatically when logging in (optional)
+Install the desktop file for autostart:<br/>
+```install -m 664 lsp-start_browser.desktop /home/<user>/.config/autostart```
+
+## Select the latest play mode automatically when logging in (optional)
+Install the desktop file for autostart:<br/>
+```install -m 664 lsp-select_player.sh.desktop /home/<user>/.config/autostart/```
+
 ## Install Cairo-Dock (optional)
 Note: I haven't got Cairo-Dock working with Wayland on Ubuntu 21.04, but I think it "should" work.
 
@@ -50,7 +58,7 @@ Install the icons:<br/>
 
 Configure Cairo-Dock so that:
 * The button with ```audio_ff.svg``` as icon runs the ```audio_ff.sh``` script.
-* The button with ```lsp_select_player.svg``` as icon runs the ```lsp_select_player.sh``` script.
+* The button with ```lsp_select_player.svg``` as icon runs the ```lsp_select_player.sh``` script with ```toggle``` as parameter.
 
 ## Install Conky (optional)
 You can use Conky to show which play method that is selected. You are on your own with Conky.
