@@ -2,9 +2,20 @@
 
 # Read the arguments
 ACTION=$1
-if ! [[ $# -eq 1 && ($ACTION = mpd || $ACTION = squeeze || $ACTION = toggle) ]]; then
-    echo "Usage: $0 <mpd|squeeze|toggle>"
+if ! [[ $# -eq 1 && ($ACTION = latest || $ACTION = mpd || $ACTION = squeeze || $ACTION = toggle) ]]; then
+    echo "Usage: $0 <latest|mpd|squeeze|toggle>"
     exit 1
+fi
+
+if [[ $ACTION = latest ]]; then
+    if [[ -f $HOME/.lsp/selected_player.txt ]]; then
+        ACTION=$(head -1 $HOME/.lsp/selected_player.txt)
+        if ! [[ $ACTION = mpd || $ACTION = squeeze ]]; then
+            ACTION=mpd
+        fi
+    else
+        ACTION=mpd
+    fi
 fi
 
 # Source the settings file
