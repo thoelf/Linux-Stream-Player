@@ -4,10 +4,10 @@ Create a directory for scripts, e.g.:<br/>
 ```mkdir /home/<user>/bin```
 
 Install the script for selecting play method:<br/>
-```install -m 750 lsp-select_player.sh /home/<user>/bin```
+```install -m 750 lsp-select_player.sh /home/<user>/bin/```
 
 Install the script that sets the nullsink and starts the browser:<br/>
-```install -m 750 audio_ff.sh /home/<user>/bin```
+```install -m 750 audio_ff.sh /home/<user>/bin/```
 
 Find the pulse source:<br/>
 ```pactl list | grep -A2 'Source #' | grep 'Name: ' | cut -d" " -f2 | head -1```
@@ -20,7 +20,7 @@ Create the directory for the configuration files:<br/>
 Note that the directory is hidden.
 
 Install the configuration file for LSP on the client:<br/>
-```install -m 640 lsp.conf /home/<user>/.lsp```
+```install -m 640 lsp.conf /home/<user>/.lsp/```
 
 Edit the file and add the missing data.
 
@@ -38,7 +38,7 @@ Note that this setting will only effect the sound streamed from the client (or p
 
 ## Start the browser automatically when logging in (optional)
 Install the desktop file for autostart:<br/>
-```install -m 664 lsp-start_browser.desktop /home/<user>/.config/autostart```
+```install -m 664 lsp-start_browser.desktop /home/<user>/.config/autostart/```
 
 ## Select the latest play mode automatically when logging in (optional)
 Install the desktop file for autostart:<br/>
@@ -54,7 +54,7 @@ Create a directory for icons, e.g.:<br/>
 ```mkdir /home/<user>/bin/icons```
 
 Install the icons:<br/>
-```install -m 650 audio_ff.svg lsp_select_player.svg /home/<user>/bin/icons```
+```install -m 650 audio_ff.svg lsp_select_player.svg /home/<user>/bin/icons/```
 
 Configure Cairo-Dock so that:
 * The button with ```audio_ff.svg``` as icon runs the ```audio_ff.sh``` script.
@@ -64,4 +64,4 @@ Configure Cairo-Dock so that:
 You can use Conky to show which play method that is selected. You are on your own with Conky.
 
 You can install this script to tell Conky which player that is selected:<br/>
-```install -m 750 conky_streaming.sh /home/<user>/bin```
+```install -m 750 conky_streaming.sh /home/<user>/bin/```
