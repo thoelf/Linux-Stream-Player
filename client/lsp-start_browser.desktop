@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=bash -c 'exec $HOME/bin/audio_ff.sh'
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=LSP - Start browser
+Name=LSP - Start browser
+Comment[en_US]=
+Comment=
