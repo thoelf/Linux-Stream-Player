@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=bash -c 'exec $HOME/bin/lsp-select_player.sh latest'
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=LSP - Select play mode
+Name=LSP - Select play mode
+Comment[en_US]=
+Comment=
