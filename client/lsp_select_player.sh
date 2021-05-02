@@ -52,7 +52,6 @@ if [[ $ACTION = mpd || ($ACTION = toggle && ! $STREAMING) ]]; then
         	:standard{\
         	access=http,\
         	name=$STREAM_NAME,\
-        	mime=audio/flac,\
         	dst=$LOCAL_IP:$LOCAL_PORT/$STREAM_NAME}" &
         sleep 2
         mpc --host=$MPD_PW@$LSP_SERVER --port=$MPD_PORT clear >/dev/null
