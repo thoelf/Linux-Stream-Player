@@ -26,9 +26,13 @@ Edit the file and add the missing data.
 
 The ```.lsp``` direcory will also include an automatically created file named ```selected_player.txt```. The file includes the text "mpd" or "squeeze" depending on the selected play method.
 
-## Install VLC
+## Install VLC - multimedia player and streamer
 Install VLC:<br/>
 ```sudo apt install vlc```
+
+## Install mpc - command line tool to interface MPD
+Install mpc:<br/>
+```sudo apt install mpc```
 
 ## Change the resampling quality (optional)
 Edit ```/etc/pulse/daemon.conf``` to resample with a higher quality, e.g.:<br/>
