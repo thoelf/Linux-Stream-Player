@@ -1,12 +1,12 @@
-# This is an example file for filter configuration in CamillaDSP,
-# to be used when using LMS with SqueezeLite. The file is a template 
-# file, that will be copied to /tmp and be updated when the samplerate 
-# changes. For every change in the samplerare, CamillaDSP will be updated 
-# with the new configuration.
+# This is an example file for filter configuration in CamillaDSP.
+#
+# The samplerate below (44100) is just a value to start with. For
+# every change in the samplerate, CamillaDSP will be updated with
+# the new samplerate. 
 
 devices:
   samplerate: 44100
-  chunksize: 2048
+  chunksize: 4096
   silence_threshold: -60
   silence_timeout: 3.0
   queuelimit: 1
@@ -20,6 +20,8 @@ devices:
     device: "hw:1"
     format: S32LE
 
+# Adjust the clip gain if you see information about clipping from
+# CamillaDSP in /var/log/syslog.
 filters:
   clipgain:
     type: Gain
@@ -27,6 +29,11 @@ filters:
       gain: -5.0
       inverted: false
 
+# The filter definitions can include IIR filters of different kinds
+# and or FIR filters.
+#
+# IIR filters
+# The filters are used for all samplerates.
   peaking_L1:
     type: Biquad
     parameters:
@@ -57,6 +64,47 @@ filters:
       q: 2.749
       gain: -6.3
 
+# FIR filters
+# Prepare a convolution file for each samplerate.
+# Long story short:
+#  - Filters from REW -> rePhase (wine ./rePhase).
+#  - Fix the phase response (Paragraphic Phase EQ).
+#  - Export the convolution files (in e.g. txt format) for 
+#    each samplerate and channel (e.g. R/L).
+#
+# Wav should work too, but for today that seems to a problem
+# with the latest release:
+# https://github.com/HEnquist/camilladsp/issues/109
+#
+# In rePhase I exported with these settings:
+#   f     taps
+# 44100	  65536
+# 48000	  65536
+# 88200	 131072
+# 96000	 131072
+#176400	 262144
+#192000	 262144
+#352800	 524288
+#384000	 524288
+# Make sure to have the samplerate in the filename.
+# Then, when refering to the files with $samplerate$ in 
+# the filename property, the correct file will be
+# selected automatically.
+  fir_L:
+    type: Conv
+    parameters:
+      type: Raw
+      filename: /etc/camilladsp_left_$samplerate$.txt
+      format: TEXT
+
+  fir_R:
+    type: Conv
+    parameters:
+      type: Raw
+      filename: /etc/camilladsp_right_$samplerate$.txt
+      format: TEXT
+
+# Putting it all together.
 pipeline:
   - type: Filter
     channel: 0
@@ -64,6 +112,7 @@ pipeline:
       - clipgain
       - peaking_L1
       - peaking_L2
+      - fir_L
 
   - type: Filter
     channel: 1
@@ -71,3 +120,4 @@ pipeline:
       - clipgain
       - peaking_R1
       - peaking_R2
+      - fir_R
