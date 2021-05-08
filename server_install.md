@@ -26,6 +26,8 @@ audio_output {
 ```
 There might be other settings you might want to do in this file.
 
+You might also want to alter the niceness for the mpd process and its subprocess CamillaDSP. To do that, add for example ```Nice=-10``` in the ```[service]``` section of ```/lib/systemd/system/mpd.service```.
+
 # SqueezeLite
 ## Getting the binary file - Alt 1: Compile from source
 Download the zipped files:<br/>
